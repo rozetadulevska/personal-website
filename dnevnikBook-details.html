@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Дневникот на Страшо Пинџур</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config = {theme: {extend: {colors: { primary: "#6366f1", secondary: "#8b5cf6" }, borderRadius: {none: "0px", sm: "4px", DEFAULT: "8px", md: "12px", lg: "16px", xl: "20px", "2xl": "24px", "3xl": "32px", full: "9999px", button: "8px",},},},};</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"/>
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Raleway', sans-serif;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #6366f1;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .book-excerpt {
+            position: relative;
+        }
+
+        .book-excerpt::before {
+            content: "";"
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            position: absolute;
+            top: -1.5rem;
+            left: -1rem;
+            color: rgba(99, 102, 241, 0.1);
+        }
+
+        .book-excerpt::after {
+            content: "";"
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            position: absolute;
+            bottom: -3.5rem;
+            right: -1rem;
+            color: rgba(99, 102, 241, 0.1);
+        }
+
+        .star-rating .star {
+            color: #d1d5db;
+        }
+
+        .star-rating .star.filled {
+            color: #f59e0b;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #6366f1;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="index.html" data-readdy="true" class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-3">
+                    <i class="ri-arrow-left-line ri-lg"></i>
+                </a>
+                <a href="#" class="text-2xl font-['Playfair_Display'] font-bold text-gray-800">Розета Дулевска</a>
+            </div>
+
+            <div class="flex items-center space-x-4">
+                <button class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 transition-colors duration-300">
+                    <i class="ri-facebook-fill"></i>
+                </button>
+                <button class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 transition-colors duration-300">
+                    <i class="ri-youtube-fill"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Book Hero -->
+    <section class="pt-24 md:pt-24 pb-16 relative">
+        <div class="absolute inset-0 bg-gradient-to-b from-primary/5 to-white"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-2/5 flex justify-center fade-in">
+                    <div class="relative">
+                        <img src="images/DnevnikCover.png" alt="Дневникот на Страшо Пинџур" class="w-full max-w-md rounded-lg shadow-xl"/>
+                        <div class="absolute -bottom-4 -right-4 bg-white px-4 py-2 rounded-lg shadow-md">
+                            <span class="text-gray-700 font-medium">Реиздадено: 2023</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full md:w-3/5 fade-in">
+                    <div class="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium mb-4">
+                        Научно - литературно дело
+                    </div>
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+                        Дневникот на Страшо Пинџур
+                    </h1>
+                    <!--<div class="flex items-center mb-6">
+                        <div class="star-rating flex mr-3">
+                            <i class="star filled ri-star-fill ri-lg mr-1"></i>
+                            <i class="star filled ri-star-fill ri-lg mr-1"></i>
+                            <i class="star filled ri-star-fill ri-lg mr-1"></i>
+                            <i class="star filled ri-star-fill ri-lg mr-1"></i>
+                            <i class="star ri-star-half-fill ri-lg"></i>
+                        </div>
+                        <span class="text-gray-600">4.5 (28 рецензии)</span>
+                    </div>-->
+                    <p class="text-lg text-gray-700 mb-6">
+                        Дневникот на Страшо Пинџур треба да се доживее како четиво што секој мора да го прочита!
+                        Ова е книга за младоста на Страшо, неговите сфаќања за животот, татковината, слободата и
+                        љубовта. Многу суптилно се открива и внатрешниот свет на Страшо исполнет со очекувања,
+                        копнежи, верба и повремени разочарувања.
+                        Тој очекува подобар и поправеден свет; копнее по
+                        својот роден крај, својата Ваташа; верува во силата на љубовта која ја изразуваше
+                        спрема русокосата, спрема девојката В., спрема „малата“ убавица и на крајот спрема
+                        другарката Л. - инкарнација на неговите стремежи.
+
+                        Напати се разочарува од неостварените
+                        идеали и љубовни очекувања, но сепак продолжува. Верува и понатаму дека главен фактор во
+                        животот е жената и тоа таква на која човекот би можел да ѝ го довери целото свое срце со
+                        сите негови болки и весели мигови. <br>
+
+                        Умее да се радува на животот и таму во некој ред од Дневникот силно ќе одекне: <br>
+                        „Колку е убаво да бидеш здрав, да живееш!..
+                    </p>
+                    <!--<div class="flex flex-wrap gap-4 mb-8">
+                        <a href="#buy" class="bg-primary hover:bg-primary/90 text-white font-medium py-3 px-6 !rounded-button transition-all duration-300 whitespace-nowrap">
+                            Купи сега
+                        </a>
+                        <a href="#sample" class="bg-white border border-primary text-primary hover:bg-primary/5 font-medium py-3 px-6 !rounded-button transition-all duration-300 whitespace-nowrap">
+                            Преземи примерок
+                        </a>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book Details Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row gap-16">
+                <div class="w-full lg:w-2/3 fade-in">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">За книгата</h2>
+                    <div class="prose max-w-none text-gray-700 mb-10">
+                        <p class="mb-4">
+                            Дневникот на Страшо Пинџур треба да се разбере како прилог
+                            во проучувањето на минатото, но и како повод за што посестрано
+                            осветлување на животот и делото на овој народен херој кој
+                            веднаш по својата смрт израсна во легенда. Не се знае дали некој
+                            зад себе оставил толку јарки документи за својот борбен пат. Тоа
+                            го сторил Страшо во Дневникот. Читателот ја согледува наполно
+                            зрелата фигура на револуционер и борец за социјална и
+                            национална правда, што ќе стане и еден од првите херои на НОБ
+                            на Македонија. На слободата односно борбата за неа, Страшо ќе
+                            го посвети и својот живот. Дневникот содржи драгоцени
+                            размислувања на Страшо Пинџур за слободата, за она што
+                            најповеќе го цени и кон кое се стреми, забележени од него во една
+                            училишна задача, без да помисли на опасностите што го демнат
+                            поради ваквото пишување.
+                        </p>
+
+                        <p class="mb-4">
+                            Дневникот на Страшо Пинџур, со дел од неговите други
+                            преписки и книги, за цело време во сите години љубоморно го
+                            чуваше баба му Наца, која по ослободувањето го предаде на
+                            понатамошно чување. Оригиналот на Дневникот заедно со
+                            белешките  од Ада Циганлија сега се наоѓа во Историскиот музеј
+                            на Македонија во Скопје. Тоа се две обични тетратки направени
+                            од авторот од табаци хартија за пишување.
+                        </p>
+
+                        <p class="mb-4">
+                            Како ретко кој, со нему својствена упорност и дисциплина,
+                            Страшо Пинџур, од ден на ден бележејќи ги случките од
+                            изминатите денови, неосетно го слика својот интимен портрет на
+                            младинец: одличен ученик, бунтовен и ревулуционерен,
+                            интелигентен и самокритичен, дружељубив, прек и нежен до
+                            крајност, склон кон филозофијата и преден кон марксистичката
+                            наука, заљубеник и размислувач за настаните околу него,
+                            визионер кој својата смрт ќе ја предвиди и ќе ја опише до детали
+                            и тоа осум години пред таа да му го прекрати младиот живот. Тој
+                            е прикажан како младинец кој има време за сé. Со голема страст чита
+                            сé што ќе му дојде до рака, за сé има и волја и време и љубов:
+                            за училиштето, за општествената работа во ученичките
+                            организации. Член е на управата на друштвото на трезвената
+                            младина на гимназијата. Во Дневникот скоро секој ден среќаваме
+                            податоци за тоа дека ,,читав една книга“. Забележлива е и
+                            неговата вистинољубивост, пишувајќи:,, Но, зарем има нешто
+                            поидеално од вистина? Вистината е факт кон кој се стремат сите,
+                            а која всушност во своите настојувања ја одминуваат. Такви се
+                            луѓето!
+                        </p>
+
+                        <p class="mb-4">
+                            Како што наведува и Јован Попоски: „Објавувањето на
+                            Дневникот е потребно, со перото на еден современик, за едно
+                            време кое сè уште не е доволно обработувано во македонската
+                            публицистика. До толку е поголема вредноста на Дневникот на
+                            Пинџур како автентично средство за тоа време од перото на еден
+                            извонредно буден младинец.“
+                        </p>
+
+                        <p class="mb-4">Книгата е поделена во две целини:</p>
+
+                        <ul class="list-disc pl-6 mb-4">
+                            <li class="mb-2">
+                                <strong>Дневникот од Крагуевац</strong> - пишуван на српскохрватски јазик.
+                            </li>
+                            <li class="mb-2">
+                                <strong>Дневникот од Ада Циганлија</strong> - пишуван на македонски јазик (Белград).
+                            </li>
+                        </ul>
+
+                        <p>
+                            Напишана со елегантен и пристапен стил, „Дневникот на Страшо Пинџур" е
+                            истовремено и академски темелна и привлечна за широката публика.
+                            Книгата содржи богата библиографија и индекс, што ја прави
+                            вреден ресурс за истражувачите и учениците.
+                        </p>
+                    </div>
+
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">
+                        Извадоци од книгата
+                    </h2>
+                    <div class="bg-gray-50 rounded-lg p-8 mb-10 relative book-excerpt">
+                        <p class="text-lg text-gray-700 italic mb-4">
+                            „Патот по кој сум тргнал е пат на луѓе кои покрај сите пречки ќе
+                            останат со чист образ и ќе бидат соработници во изградувањето
+                            на еден човечки живот“.
+                        </p>
+                        <p class="text-lg text-gray-700 italic mb-4">
+                            И кога еден ден човештвото ќе биде устроено според правилата:
+                            “Слобода, братство равенство!”-
+                            што сето значи само слобода,
+                            тогаш и секој поединец слободно ќе дише под слободно небо.
+                            Таквото устројство на човештвото
+                            ќе тргне кон вечни патишта,
+                            тогаш ќе бидат исполнети општо човечките идеали
+                            на големите луѓе кои што нов ги имале за начела.
+                        </p>
+                        <p class="text-lg text-gray-700 italic">
+                            „Па да, ..... зар не сме сите еднакви?  Сите мораме да бидеме
+                            еднакви во секој поглед. Работата е таа со која сé во светов е
+                            создадено, а посебно ако неа ја вршат таленти и гении!“
+                        </p>
+                    </div>
+
+                    <!--<h2 class="text-3xl font-bold text-gray-800 mb-6">Рецензии</h2>
+                    <div class="space-y-8 mb-10">
+                        <div class="bg-white border border-gray-200 rounded-lg p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-4">
+                                    <i class="ri-user-3-fill ri-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-800">
+                                        Проф. д-р Димитар Пандев
+                                    </h4>
+                                    <div class="star-rating flex">
+                                        <i class="star filled ri-star-fill ri-lg mr-1"></i>
+                                        <i class="star filled ri-star-fill ri-lg mr-1"></i>
+                                        <i class="star filled ri-star-fill ri-lg mr-1"></i>
+                                        <i class="star filled ri-star-fill ri-lg mr-1"></i>
+                                        <i class="star filled ri-star-fill ri-lg"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-700">
+                                „Патот на зборовите" на Розета Дулевска е извонредно дело што
+                                ја комбинира академската темелност со пристапен стил.
+                                Авторката успева да ги претстави сложените лингвистички и
+                                литературни концепти на начин што е разбирлив и за стручната и
+                                за пошироката публика. Особено вредни се нејзините анализи на
+                                влијанието на народната традиција врз современата македонска
+                                литература.
+                            </p>
+                        </div>
+
+                        <div class="bg-white border border-gray-200 rounded-lg p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-4">
+                                    <i class="ri-user-3-fill ri-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-800">
+                                        Ана Стојановска
+                                    </h4>
+                                    <div class="star-rating flex">
+                                        <i class="star filled ri-star-fill ri-lg mr-1"></i>
+                                        <i class="star filled ri-star-fill ri-lg mr-1"></i>
+                                        <i class="star filled ri-star-fill ri-lg mr-1"></i>
+                                        <i class="star filled ri-star-fill ri-lg mr-1"></i>
+                                        <i class="star ri-star-fill ri-lg"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-700">
+                                Како наставник по македонски јазик, оваа книга ми стана
+                                неопходен ресурс во мојата работа. Есеите се полни со
+                                интересни информации и перспективи што лесно можат да се
+                                вклучат во наставата. Особено ми се допаѓа делот за
+                                современите предизвици на македонскиот јазик во дигиталната
+                                ера, тема што ретко се обработува во други книги.
+                            </p>
+                        </div>
+
+                        <div class="bg-white border border-gray-200 rounded-lg p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-4">
+                                    <i class="ri-user-3-fill ri-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-800">
+                                        Мартин Николовски
+                                    </h4>
+                                    <div class="star-rating flex">
+                                        <i class="star filled ri-star-fill ri-lg mr-1"></i>
+                                        <i class="star filled ri-star-fill ri-lg mr-1"></i>
+                                        <i class="star filled ri-star-fill ri-lg mr-1"></i>
+                                        <i class="star filled ri-star-fill ri-lg mr-1"></i>
+                                        <i class="star ri-star-line ri-lg"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-700">
+                                Иако не сум лингвист по професија, туку само ентузијаст за
+                                македонскиот јазик, оваа книга ме воодушеви со својата
+                                пристапност и длабочина. Дулевска има талент да објаснува
+                                комплексни концепти на едноставен начин, без да ја жртвува
+                                академската прецизност. Единствената забелешка е што би сакал
+                                да видам повеќе компаративни анализи со другите јужнословенски
+                                јазици.
+                            </p>
+                        </div>
+                    </div>-->
+
+                    <!--<div class="text-center">
+                        <button class="bg-white border border-primary text-primary hover:bg-primary/5 font-medium py-3 px-6 !rounded-button transition-all duration-300 whitespace-nowrap">
+                            Види ги сите рецензии
+                        </button>
+                    </div>-->
+                </div>
+
+                <div class="w-full lg:w-1/3 fade-in">
+                    <div class="sticky top-24">
+                        <div class="bg-gray-50 rounded-lg p-6 mb-8">
+                            <h3 class="text-xl font-bold text-gray-800 mb-4">
+                                Информации за книгата
+                            </h3>
+                            <div class="space-y-4">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Уредници:</span>
+                                    <span class="text-gray-800 font-medium">Розета Дулевска, Анета Ѓорѓиевска</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Година на реиздавање:</span>
+                                    <span class="text-gray-800 font-medium">2023</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Број на страници:</span>
+                                    <span class="text-gray-800 font-medium">180</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Јазик:</span>
+                                    <span class="text-gray-800 font-medium">Македонски</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">ISBN:</span>
+                                    <span class="text-gray-800 font-medium">978-608-245-866-3</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Категорија:</span>
+                                    <span class="text-gray-800 font-medium">Дневник</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="sample" class="bg-gray-50 rounded-lg p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-4">
+                                Преземи примерок
+                            </h3>
+                            <p class="text-gray-700 mb-6">
+                                Преземете бесплатен примерок од книгата што вклучува предговор.
+                            </p>
+                            <div class="flex items-center justify-between bg-white border border-gray-300 rounded p-4 mb-6">
+                                <div class="flex items-center">
+                                    <div class="w-10 h-10 flex items-center justify-center rounded bg-red-100 text-red-500 mr-3">
+                                        <i class="ri-file-pdf-line ri-lg"></i>
+                                    </div>
+                                    <div>
+                          <span class="block text-gray-800 font-medium">Дневникот на Страшо Пинџур</span>
+                                        <span class="text-gray-600 text-sm">PDF, 2.9 MB</span>
+                                    </div>
+                                </div>
+                                <button class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 transition-colors duration-300">
+                                    <i class="ri-download-line ri-lg"></i>
+                                </button>
+                            </div>
+                            <a href="pdf/Дневник%20на%20Страшо%20Пинџур.pdf" download class="flex items-center justify-center bg-primary hover:bg-primary/90 text-white font-medium py-3 px-4 !rounded-button transition-all duration-300 whitespace-nowrap w-full">
+                                Преземи примерок
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <a href="#home" class="text-2xl font-['Playfair_Display'] font-bold mb-4 md:mb-0">Розета Дулевска</a>
+
+                <div class="flex space-x-6">
+                    <a href="#home" class="text-gray-300 hover:text-white transition-colors duration-300">Почетна</a>
+                    <a href="#biography" class="text-gray-300 hover:text-white transition-colors duration-300">Биографија</a>
+                    <a href="#works" class="text-gray-300 hover:text-white transition-colors duration-300">Дела</a>
+                    <a href="#songs" class="text-gray-300 hover:text-white transition-colors duration-300">Песни</a>
+                    <a href="#news" class="text-gray-300 hover:text-white transition-colors duration-300">Вести</a>
+                    <a href="#contact" class="text-gray-300 hover:text-white transition-colors duration-300">Контакт</a>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">
+                    &copy; 2025 Розета Дулевска. Сите права се задржани.
+                </p>
+
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Политика за приватност</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Услови за користење</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Scroll animations
+        const fadeElements = document.querySelectorAll(".fade-in");
+
+        const fadeInOnScroll = function () {
+            fadeElements.forEach((element) => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add("visible");
+                }
+            });
+        };
+
+        // Initial check on page load
+        fadeInOnScroll();
+
+        // Check on scroll
+        window.addEventListener("scroll", fadeInOnScroll);
+    });
+</script>
+</body>
+</html>

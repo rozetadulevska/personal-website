@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Далги</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config = {theme: {extend: {colors: { primary: "#6366f1", secondary: "#8b5cf6" }, borderRadius: {none: "0px", sm: "4px", DEFAULT: "8px", md: "12px", lg: "16px", xl: "20px", "2xl": "24px", "3xl": "32px", full: "9999px", button: "8px",},},},};</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"/>
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Raleway', sans-serif;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #6366f1;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .book-excerpt {
+            position: relative;
+        }
+
+        .book-excerpt::before {
+            content: "";"
+        font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            position: absolute;
+            top: -1.5rem;
+            left: -1rem;
+            color: rgba(99, 102, 241, 0.1);
+        }
+
+        .book-excerpt::after {
+            content: "";"
+        font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            position: absolute;
+            bottom: -3.5rem;
+            right: -1rem;
+            color: rgba(99, 102, 241, 0.1);
+        }
+
+        .star-rating .star {
+            color: #d1d5db;
+        }
+
+        .star-rating .star.filled {
+            color: #f59e0b;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #6366f1;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="index.html" data-readdy="true" class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-3">
+                    <i class="ri-arrow-left-line ri-lg"></i>
+                </a>
+                <a href="#" class="text-2xl font-['Playfair_Display'] font-bold text-gray-800">Розета Дулевска</a>
+            </div>
+
+            <div class="flex items-center space-x-4">
+                <button class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 transition-colors duration-300">
+                    <i class="ri-facebook-fill"></i>
+                </button>
+                <button class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 transition-colors duration-300">
+                    <i class="ri-youtube-fill"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Book Hero -->
+    <section class="pt-24 md:pt-24 pb-16 relative">
+        <div class="absolute inset-0 bg-gradient-to-b from-primary/5 to-white"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-2/5 flex justify-center fade-in">
+                    <div class="relative">
+                        <img src="images/DalgiCover.png" alt="Далги" class="w-full max-w-md rounded-lg shadow-xl"/>
+                        <div class="absolute -bottom-4 -right-4 bg-white px-4 py-2 rounded-lg shadow-md">
+                            <span class="text-gray-700 font-medium">Издадено: 2025</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full md:w-3/5 fade-in">
+                    <div class="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium mb-4">
+                        Поезија
+                    </div>
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+                        Далги
+                    </h1>
+                    <!--<div class="flex items-center mb-6">
+                        <div class="star-rating flex mr-3">
+                            <i class="star filled ri-star-fill ri-lg mr-1"></i>
+                            <i class="star filled ri-star-fill ri-lg mr-1"></i>
+                            <i class="star filled ri-star-fill ri-lg mr-1"></i>
+                            <i class="star filled ri-star-fill ri-lg mr-1"></i>
+                            <i class="star ri-star-half-fill ri-lg"></i>
+                        </div>
+                        <span class="text-gray-600">4.5 (28 рецензии)</span>
+                    </div>-->
+                    <p class="text-lg text-gray-700 mb-6">
+                        Поезијата во збирката „Далги“ е поезија што не е наменета никому, а припаѓа секому!
+                        Стиховите во неа се брануваат слично како далгите низ морето – наречен живот.
+                        Црпат мотиви од животните длабочини што ни носат понекогаш радост понекогаш немир.
+                    </p>
+                    <!--<div class="flex flex-wrap gap-4 mb-8">
+                        <a href="#buy" class="bg-primary hover:bg-primary/90 text-white font-medium py-3 px-6 !rounded-button transition-all duration-300 whitespace-nowrap">
+                            Купи сега
+                        </a>
+                        <a href="#sample" class="bg-white border border-primary text-primary hover:bg-primary/5 font-medium py-3 px-6 !rounded-button transition-all duration-300 whitespace-nowrap">
+                            Преземи примерок
+                        </a>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book Details Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row gap-16">
+                <div class="w-full lg:w-2/3 fade-in">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">За книгата</h2>
+                    <div class="prose max-w-none text-gray-700 mb-10">
+                        <p class="mb-4">
+                            Поезијата во збирката „Далги“ е поезија што не е
+                            наменета никому, а припаѓа секому! <br>
+                            Стиховите во неа се брануваат слично како далгите низ
+                            морето – наречен живот. Црпат мотиви од животните
+                            длабочини што ни носат понекогаш радост понекогаш
+                            немир. Збирката поезија е плод на драгоцен труд  и  потстрек
+                            од верната читателска публика која секојдневно го
+                            охрабруваше секој напишан стих, кој заслужува да ја види
+                            светлината на денот. Книгата можеби на момент звучи
+                            поучно со своите теми, но сепак остана верна на своите
+                            уметнички и естетски цели, овозможувајќи една прекрасна
+                            наслада со поетската убавина на пишаниот збор.
+                        </p>
+
+                        <p class="mb-4">
+                            Во песните доаѓа до израз потребата од добрина,
+                            чесност, благодарност, вистина, правда, искреност и верба
+                            како највозвишени човечки атрибути. Понекогаш, тие се
+                            претставени на еден досетлив начин, можеби и со малку
+                            иронија, но сосема доволно за да се укаже на огромното
+                            значење и секојдневата потреба од  овие животни добродетели.
+                        </p>
+
+                        <p class="mb-4">
+                            Единственото очекување од сиот овој поетски труд е
+                            увереноста дека сите песни ќе остават трага и ќе продолжат
+                            да живеат и пловат како инспирација, како далги - низ
+                            животните бранувања.
+                        </p>
+
+                        <p class="mb-4">Книгата е составена од 21 песна:</p>
+
+                        <ul class="list-disc pl-6 mb-4">
+                            <li class="mb-2">
+                                <strong>„Далги“</strong>
+                            </li>
+                            <li class="mb-2">
+                                <strong>„Збор“</strong>
+                            </li>
+                            <li class="mb-2">
+                                <strong>„Избор“</strong>
+                            </li>
+                            <li class="mb-2">
+                                <strong>„Лет“</strong>
+                            </li>
+                            <li class="mb-2">
+                                <strong>„Од изворот“</strong>
+                            </li>
+                            <li class="mb-2">
+                                <strong>„Бисер“</strong>
+                            </li>
+                            <li class="mb-2">
+                                <strong>„Илузија“</strong>
+                            </li>
+                            <li class="mb-2">
+                                <strong>„Диоген“</strong>
+                            </li>
+                            <li class="mb-2">
+                                <strong>„Минијатура“</strong>
+                            </li>
+                            <li class="mb-2">
+                                <strong>„Дворец“</strong>
+                            </li>
+                            <li class="mb-2">
+                                <strong>„Врева“</strong>
+                            </li>
+                            <li class="mb-2">
+                                <strong>„За другиот“</strong>
+                            </li>
+                            <li class="mb-2">
+                                <strong>„За единствените“</strong>
+                            </li>
+                            <li class="mb-2">
+                                <strong>„Шах - мат“</strong>
+                            </li>
+                            <li class="mb-2">
+                                <strong>„Слово“</strong>
+                            </li>
+                            <li class="mb-2">
+                                <strong>„Еден за друг“</strong>
+                            </li>
+                            <li class="mb-2">
+                                <strong>„Капка“</strong>
+                            </li>
+                            <li class="mb-2">
+                                <strong>„Трон“</strong>
+                            </li>
+                            <li class="mb-2">
+                                <strong>„Детелинка“</strong>
+                            </li>
+                            <li class="mb-2">
+                                <strong>„Господин“</strong>
+                            </li>
+                            <li class="mb-2">
+                                <strong>„Клуч“</strong>
+                            </li>
+                        </ul>
+
+                        <p>
+                            Напишана со елегантен и пристапен стил, збирката поезија „Далги" е
+                            истовремено и академски темелна и привлечна за широката публика.
+                        </p>
+                    </div>
+
+                    <!--<h2 class="text-3xl font-bold text-gray-800 mb-6">Рецензии</h2>
+                    <div class="space-y-8 mb-10">
+                        <div class="bg-white border border-gray-200 rounded-lg p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-4">
+                                    <i class="ri-user-3-fill ri-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-800">
+                                        Проф. д-р Димитар Пандев
+                                    </h4>
+                                    <div class="star-rating flex">
+                                        <i class="star filled ri-star-fill ri-lg mr-1"></i>
+                                        <i class="star filled ri-star-fill ri-lg mr-1"></i>
+                                        <i class="star filled ri-star-fill ri-lg mr-1"></i>
+                                        <i class="star filled ri-star-fill ri-lg mr-1"></i>
+                                        <i class="star filled ri-star-fill ri-lg"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-700">
+                                „Патот на зборовите" на Розета Дулевска е извонредно дело што
+                                ја комбинира академската темелност со пристапен стил.
+                                Авторката успева да ги претстави сложените лингвистички и
+                                литературни концепти на начин што е разбирлив и за стручната и
+                                за пошироката публика. Особено вредни се нејзините анализи на
+                                влијанието на народната традиција врз современата македонска
+                                литература.
+                            </p>
+                        </div>
+
+                        <div class="bg-white border border-gray-200 rounded-lg p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-4">
+                                    <i class="ri-user-3-fill ri-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-800">
+                                        Ана Стојановска
+                                    </h4>
+                                    <div class="star-rating flex">
+                                        <i class="star filled ri-star-fill ri-lg mr-1"></i>
+                                        <i class="star filled ri-star-fill ri-lg mr-1"></i>
+                                        <i class="star filled ri-star-fill ri-lg mr-1"></i>
+                                        <i class="star filled ri-star-fill ri-lg mr-1"></i>
+                                        <i class="star ri-star-fill ri-lg"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-700">
+                                Како наставник по македонски јазик, оваа книга ми стана
+                                неопходен ресурс во мојата работа. Есеите се полни со
+                                интересни информации и перспективи што лесно можат да се
+                                вклучат во наставата. Особено ми се допаѓа делот за
+                                современите предизвици на македонскиот јазик во дигиталната
+                                ера, тема што ретко се обработува во други книги.
+                            </p>
+                        </div>
+
+                        <div class="bg-white border border-gray-200 rounded-lg p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-4">
+                                    <i class="ri-user-3-fill ri-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-800">
+                                        Мартин Николовски
+                                    </h4>
+                                    <div class="star-rating flex">
+                                        <i class="star filled ri-star-fill ri-lg mr-1"></i>
+                                        <i class="star filled ri-star-fill ri-lg mr-1"></i>
+                                        <i class="star filled ri-star-fill ri-lg mr-1"></i>
+                                        <i class="star filled ri-star-fill ri-lg mr-1"></i>
+                                        <i class="star ri-star-line ri-lg"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-700">
+                                Иако не сум лингвист по професија, туку само ентузијаст за
+                                македонскиот јазик, оваа книга ме воодушеви со својата
+                                пристапност и длабочина. Дулевска има талент да објаснува
+                                комплексни концепти на едноставен начин, без да ја жртвува
+                                академската прецизност. Единствената забелешка е што би сакал
+                                да видам повеќе компаративни анализи со другите јужнословенски
+                                јазици.
+                            </p>
+                        </div>
+                    </div>-->
+
+                    <!--<div class="text-center">
+                        <button class="bg-white border border-primary text-primary hover:bg-primary/5 font-medium py-3 px-6 !rounded-button transition-all duration-300 whitespace-nowrap">
+                            Види ги сите рецензии
+                        </button>
+                    </div>-->
+                </div>
+
+                <div class="w-full lg:w-1/3 fade-in">
+                    <div class="sticky top-24">
+                        <div class="bg-gray-50 rounded-lg p-6 mb-8">
+                            <h3 class="text-xl font-bold text-gray-800 mb-4">
+                                Информации за книгата
+                            </h3>
+                            <div class="space-y-4">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Автор:</span>
+                                    <span class="text-gray-800 font-medium">Розета Дулевска</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Година на издавање:</span>
+                                    <span class="text-gray-800 font-medium">2025</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Број на страници:</span>
+                                    <span class="text-gray-800 font-medium">53</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Јазик:</span>
+                                    <span class="text-gray-800 font-medium">Македонски</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">ISBN:</span>
+                                    <span class="text-gray-800 font-medium">978-608-67372-0-7</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Категорија:</span>
+                                    <span class="text-gray-800 font-medium">Поезија</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <a href="#home" class="text-2xl font-['Playfair_Display'] font-bold mb-4 md:mb-0">Розета Дулевска</a>
+
+                <div class="flex space-x-6">
+                    <a href="#home" class="text-gray-300 hover:text-white transition-colors duration-300">Почетна</a>
+                    <a href="#biography" class="text-gray-300 hover:text-white transition-colors duration-300">Биографија</a>
+                    <a href="#works" class="text-gray-300 hover:text-white transition-colors duration-300">Дела</a>
+                    <a href="#songs" class="text-gray-300 hover:text-white transition-colors duration-300">Песни</a>
+                    <a href="#news" class="text-gray-300 hover:text-white transition-colors duration-300">Вести</a>
+                    <a href="#contact" class="text-gray-300 hover:text-white transition-colors duration-300">Контакт</a>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">
+                    &copy; 2025 Розета Дулевска. Сите права се задржани.
+                </p>
+
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Политика за приватност</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Услови за користење</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Scroll animations
+        const fadeElements = document.querySelectorAll(".fade-in");
+
+        const fadeInOnScroll = function () {
+            fadeElements.forEach((element) => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add("visible");
+                }
+            });
+        };
+
+        // Initial check on page load
+        fadeInOnScroll();
+
+        // Check on scroll
+        window.addEventListener("scroll", fadeInOnScroll);
+    });
+</script>
+</body>
+</html>

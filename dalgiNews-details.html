@@ -1,10 +1,528 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="mk">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Промоција на збирка поезија „Далги“</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config = {theme: {extend: {colors: { primary: "#6366f1", secondary: "#8b5cf6" }, borderRadius: {none: "0px", sm: "4px", DEFAULT: "8px", md: "12px", lg: "16px", xl: "20px", "2xl": "24px", "3xl": "32px", full: "9999px", button: "8px",},},},};
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"/>
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Raleway', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #6366f1;
+        }
+        .social-icon {
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        .social-icon:hover {
+            transform: translateY(-3px);
+            color: #6366f1;
+        }
+        .gallery-image {
+            transition: transform 0.3s ease;
+        }
+        .gallery-image:hover {
+            transform: scale(1.05);
+        }
+    </style>
 </head>
-<body>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="index.html#news" data-readdy="true" class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-3">
+                    <i class="ri-arrow-left-line ri-lg"></i>
+                </a>
+            </div>
+            <h1 class="text-xl font-['Playfair_Display'] font-bold text-gray-800">
+                Детали за настанот
+            </h1>
+            <div class="relative group">
+                <button id="share-button" class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 text-primary">
+                    <i class="ri-share-line ri-lg"></i>
+                </button>
+                <div id="share-dropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2 z-10">
+                    <a href="#" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                        <div class="w-8 h-8 flex items-center justify-center mr-2">
+                            <i class="ri-facebook-fill ri-lg text-blue-600"></i>
+                        </div>
+                        <span>Facebook</span>
+                    </a>
+                    <a href="#" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                        <div class="w-8 h-8 flex items-center justify-center mr-2">
+                            <i class="ri-twitter-x-fill ri-lg text-black"></i>
+                        </div>
+                        <span>Twitter</span>
+                    </a>
+                    <a href="#" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                        <div class="w-8 h-8 flex items-center justify-center mr-2">
+                            <i class="ri-whatsapp-fill ri-lg text-green-500"></i>
+                        </div>
+                        <span>WhatsApp</span>
+                    </a>
+                    <a href="#" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                        <div class="w-8 h-8 flex items-center justify-center mr-2">
+                            <i class="ri-mail-fill ri-lg text-red-500"></i>
+                        </div>
+                        <span>Е-пошта</span>
+                    </a>
+                    <button id="copy-link" class="w-full flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                        <div class="w-8 h-8 flex items-center justify-center mr-2">
+                            <i class="ri-link ri-lg text-gray-500"></i>
+                        </div>
+                        <span>Копирај линк</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
 
+    <!-- Hero  -->
+    <section class="pt-16 relative">
+        <div class="w-full h-96 relative">
+            <img src="images/DalgiPromocija.JPG" alt="Промоција на книга" class="w-full h-full object-cover [object-position:50%_30%]"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                <div class="inline-block bg-primary px-3 py-1 rounded-full text-sm font-medium mb-3">
+                    Одржан настан
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold mb-2">
+                    Промоција на збирка поезија „Далги"
+                </h1>
+                <div class="flex items-center space-x-4 mt-3">
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 flex items-center justify-center rounded-full bg-white/20 mr-2">
+                            <i class="ri-calendar-line text-white"></i>
+                        </div>
+                        <span>15 мај, 2025</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 flex items-center justify-center rounded-full bg-white/20 mr-2">
+                            <i class="ri-time-line text-white"></i>
+                        </div>
+                        <span>18:00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Details -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row gap-8">
+                <div class="w-full lg:w-2/3">
+                    <div class="bg-primary/5 border-l-4 border-primary p-4 mb-8">
+                        <p class="text-gray-700">
+                            Промоцијата на книгата се оствари во Спомен-собата на Анте Поповски
+                            (општина Ѓорче Петров) каде публиката уживаше во секој прочитан стих.
+                            А авторката им вети: „Бранувањата ќе продолжат, творењето ќе продолжи,
+                            нови ракописи се на повидок, се’ си има свое време“.
+                        </p>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6">За настанот</h2>
+                    <div class="prose max-w-none text-gray-700 mb-8">
+                        <p class="mb-4">
+                            Македонската книжевна сцена стана побогата со уште еден автор
+                            и поетска книга. Станува збор за авторката  Розета Дулевска и
+                            нејзината збирка „Далги“ - едно ново уметничко бранување и
+                            освежување со пишаниот збор. Поезијата во самата книга повикува
+                            на добрина, почит, правда и љубов, повикува на човечки добродетели
+                            кои ни се повеќе од потребни. И тоа на еден уметнички начин,
+                            како наслада на душата во ова време на едно големо преиспитување на човекот.
+                        </p>
+                        <p class="mb-4">
+                            Уметничкиот израз можеби се должи на нејзината професија, наставник
+                            по македонски јазик и литература или можеби на фактот, што таа е
+                            внука и воедно уметнички наследник на истакнатиот македонски режисер,
+                            актер и професор Вукан Диневски - водечка фигура во развојот на македонскиот театар.
+                        </p>
+                        <p class="mb-4">
+                            Авторката Розета Дулевска им се заблагодари на присутните и
+                            сподели неколку лични рефлексии за процесот на создавање на
+                            збирката, инспирацијата и пораките кои сакала да ги пренесе
+                            преку своите стихови.
+                        </p>
+                        <p>
+                            Настанот заврши со коктел и неформално дружење, каде присутните
+                            имаа можност да разговараат со авторката и да добијат потпишан
+                            примерок од збирката.
+                        </p>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6">
+                        Видео од настанот
+                    </h2>
+                    <div class="aspect-w-16 aspect-h-9 mb-12">
+                        <div class="w-full h-[480px] bg-gray-100 rounded-lg flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="w-16 h-16 flex items-center justify-center rounded-full bg-primary/10 text-primary mx-auto mb-4">
+                                    <i class="ri-video-line ri-2x"></i>
+                                </div>
+                                <p class="text-gray-600">Видео снимка од промоцијата</p>
+                            </div>
+                        </div>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6">
+                        Фотографии од настанот
+                    </h2>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+                        <div class="overflow-hidden rounded-lg">
+                            <img src="images/prom1.JPG" alt="Промоција 1" class="w-full h-48 object-cover object-top gallery-image"/>
+                        </div>
+                        <div class="overflow-hidden rounded-lg">
+                            <img src="images/prom2.JPG" alt="Промоција 2" class="w-full h-48 object-cover object-top gallery-image"/>
+                        </div>
+                        <div class="overflow-hidden rounded-lg">
+                            <img src="images/prom3.JPG" alt="Промоција 3" class="w-full h-48 object-cover object-top gallery-image"/>
+                        </div>
+                        <div class="overflow-hidden rounded-lg">
+                            <img src="images/prom4.JPG" alt="Промоција 4" class="w-full h-48 object-cover object-top gallery-image"/>
+                        </div>
+                        <div class="overflow-hidden rounded-lg">
+                            <img src="images/prom5.JPG" alt="Промоција 5" class="w-full h-48 object-cover object-top gallery-image"/>
+                        </div>
+                        <div class="overflow-hidden rounded-lg">
+                            <img src="images/prom6.JPG" alt="Промоција 6" class="w-full h-48 object-cover object-top gallery-image"/>
+                        </div>
+                        <div class="overflow-hidden rounded-lg">
+                            <img src="images/prom7.JPG" alt="Промоција 7" class="w-full h-48 object-cover object-top gallery-image"/>
+                        </div>
+                        <div class="overflow-hidden rounded-lg">
+                            <img src="images/prom8.JPG" alt="Промоција 8" class="w-full h-48 object-cover object-top gallery-image"/>
+                        </div>
+                        <div class="overflow-hidden rounded-lg">
+                            <img src="images/prom9.JPG" alt="Промоција 9" class="w-full h-48 object-cover object-top gallery-image"/>
+                        </div>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6">
+                        Локација на настанот
+                    </h2>
+                    <div class="rounded-lg overflow-hidden mb-6">
+                        <div class="w-full h-80 bg-cover bg-center" style="background-image: url('images/locationCenter.png')"></div>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-6 mb-8">
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-4 mt-1">
+                                <i class="ri-map-pin-line ri-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium text-gray-800 mb-1">
+                                    Културен центар Ѓорче Петров
+                                </h4>
+                                <p class="text-gray-600 mb-4">
+                                    Спомен соба на Анте Поповски<br />ул. Ѓорче Петров бр. 10, 1000 Скопје
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6">Транспорт</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-start bg-gray-50 p-4 rounded-lg">
+                            <div class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-3">
+                                <i class="ri-bus-line ri-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800 mb-1">
+                                    Автобуски линии
+                                </h4>
+                                <p class="text-gray-600">
+                                    Линии 2, 5, 12 и 11<br />Станица: Ѓорче Петров Кино
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-start bg-gray-50 p-4 rounded-lg">
+                            <div class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-3">
+                                <i class="ri-taxi-line ri-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800 mb-1">Такси</h4>
+                                <p class="text-gray-600">
+                                    Повеќе такси компании во близина
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-start bg-gray-50 p-4 rounded-lg">
+                            <div class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-3">
+                                <i class="ri-parking-line ri-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800 mb-1">Паркинг</h4>
+                                <p class="text-gray-600">
+                                    Паркинг Парк Ѓорче Петров<br />
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-start bg-gray-50 p-4 rounded-lg">
+                            <div class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-3">
+                                <i class="ri-walk-line ri-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800 mb-1">Пешки</h4>
+                                <p class="text-gray-600">
+                                    5 минути од Парк Ѓорче Петров<br />10 минути од бул. Партизански Одреди
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/3">
+                    <div class="sticky top-24">
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-800 mb-6">
+                                    Детали за настанот
+                                </h3>
+                                <div class="space-y-4">
+                                    <div class="flex items-start">
+                                        <div class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-3">
+                                            <i class="ri-calendar-line ri-lg"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-medium text-gray-800">Датум и време</h4>
+                                            <p class="text-gray-600">
+                                                15 мај, 2025<br />18:00 - 19:00 часот
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-3">
+                                            <i class="ri-map-pin-line ri-lg"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-medium text-gray-800">Локација</h4>
+                                            <p class="text-gray-600">
+                                                Културен центар Ѓорче Петров<br />ул. Ѓорче Петров бр. 10, 1000 Скопје
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-3">
+                                            <i class="ri-user-line ri-lg"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-medium text-gray-800">Организатор</h4>
+                                            <p class="text-gray-600">
+                                                Розета Дулевска
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-3">
+                                            <i class="ri-ticket-line ri-lg"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-medium text-gray-800">Влез</h4>
+                                            <p class="text-gray-600">
+                                                Слободен влез
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-3">
+                                            <i class="ri-group-line ri-lg"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-medium text-gray-800">Капацитет</h4>
+                                            <p class="text-gray-600">30 места</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-800 mb-4">
+                                    Сподели на социјални мрежи
+                                </h3>
+                                <div class="flex justify-between">
+                                    <a href="#" class="w-12 h-12 flex items-center justify-center rounded-full bg-gray-50 text-blue-600 hover:bg-blue-100 transition-all duration-300 social-icon">
+                                        <i class="ri-facebook-fill ri-lg"></i>
+                                    </a>
+                                    <a href="#" class="w-12 h-12 flex items-center justify-center rounded-full bg-gray-50 text-black hover:bg-gray-200 transition-all duration-300 social-icon">
+                                        <i class="ri-twitter-x-fill ri-lg"></i>
+                                    </a>
+                                    <a href="#" class="w-12 h-12 flex items-center justify-center rounded-full bg-gray-50 text-green-500 hover:bg-green-100 transition-all duration-300 social-icon">
+                                        <i class="ri-whatsapp-fill ri-lg"></i>
+                                    </a>
+                                    <a href="#" class="w-12 h-12 flex items-center justify-center rounded-full bg-gray-50 text-blue-400 hover:bg-blue-100 transition-all duration-300 social-icon">
+                                        <i class="ri-telegram-fill ri-lg"></i>
+                                    </a>
+                                    <a href="#" class="w-12 h-12 flex items-center justify-center rounded-full bg-gray-50 text-red-500 hover:bg-red-100 transition-all duration-300 social-icon">
+                                        <i class="ri-mail-fill ri-lg"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--&lt;!&ndash; Related Events  &ndash;&gt;
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-3">
+                Слични настани
+            </h2>
+            <div class="h-1 w-24 bg-primary mx-auto mb-12"></div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                &lt;!&ndash; Event 1 &ndash;&gt;
+                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=creative%2520writing%2520workshop%2520in%2520library%252C%2520teacher%2520with%2520students%252C%2520educational%2520setting%252C%2520books%2520and%2520writing%2520materials%252C%2520professional%2520event%2520photography%252C%2520high%2520quality%252C%2520cultural%2520education%252C%2520macedonian%2520classroom&width=600&height=400&seq=19&orientation=landscape" alt="Работилница за креативно пишување" class="w-full h-full object-cover object-top"/>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-sm text-gray-500">1 јуни, 2025</span>
+                            <span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">Работилница</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">
+                            Работилница за креативно пишување
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            Градска библиотека „Браќа Миладиновци", Скопје
+                        </p>
+                        <a href="#" class="inline-flex items-center text-primary hover:text-primary/80 font-medium">
+                            Прочитај повеќе
+                            <i class="ri-arrow-right-line ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                &lt;!&ndash; Event 2 &ndash;&gt;
+                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=literature%2520festival%2520with%2520panel%2520discussion%252C%2520authors%2520on%2520stage%252C%2520audience%252C%2520professional%2520event%2520photography%252C%2520high%2520quality%252C%2520cultural%2520event%252C%2520macedonian%2520literature%2520festival%252C%2520conference%2520setting&width=600&height=400&seq=20&orientation=landscape" alt="Струшки вечери на поезијата" class="w-full h-full object-cover object-top"/>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-sm text-gray-500">22-27 август, 2025</span>
+                            <span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">Фестивал</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">
+                            Струшки вечери на поезијата
+                        </h3>
+                        <p class="text-gray-600 mb-4">Струга, Македонија</p>
+                        <a href="#" class="inline-flex items-center text-primary hover:text-primary/80 font-medium">
+                            Прочитај повеќе
+                            <i class="ri-arrow-right-line ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                &lt;!&ndash; Event 3 &ndash;&gt;
+                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=book%2520fair%2520with%2520many%2520stands%2520and%2520visitors%252C%2520large%2520exhibition%2520hall%252C%2520professional%2520event%2520photography%252C%2520high%2520quality%252C%2520cultural%2520event%252C%2520macedonian%2520book%2520fair%252C%2520crowded%2520venue&width=600&height=400&seq=21&orientation=landscape" alt="Саем на книгата во Скопје" class="w-full h-full object-cover object-top"/>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-sm text-gray-500">10-15 септември, 2025</span>
+                            <span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">Саем</span
+                            >
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">
+                            Саем на книгата во Скопје
+                        </h3>
+                        <p class="text-gray-600 mb-4">Саем Скопје, Македонија</p>
+                        <a href="#" class="inline-flex items-center text-primary hover:text-primary/80 font-medium">
+                            Прочитај повеќе
+                            <i class="ri-arrow-right-line ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>-->
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <a href="index.html" class="text-2xl font-['Playfair_Display'] font-bold mb-4 md:mb-0">Розета Дулевска</a>
+
+                <div class="flex space-x-6">
+                    <a href="index.html" class="text-gray-300 hover:text-white transition-colors duration-300">Почетна</a>
+                    <a href="index.html#biography" class="text-gray-300 hover:text-white transition-colors duration-300">Биографија</a>
+                    <a href="index.html#works" class="text-gray-300 hover:text-white transition-colors duration-300">Дела</a>
+                    <a href="index.html#songs" class="text-gray-300 hover:text-white transition-colors duration-300">Песни</a>
+                    <a href="index.html#news" class="text-gray-300 hover:text-white transition-colors duration-300">Вести</a>
+                    <a href="index.html#contact" class="text-gray-300 hover:text-white transition-colors duration-300">Контакт</a>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">
+                    &copy; 2025 Розета Дулевска. Сите права се задржани.
+                </p>
+
+                <div class="flex space-x-4">
+                    <a href="privacy.html" class="text-gray-400 hover:text-white transition-colors duration-300">Политика за приватност</a>
+                    <a href="terms.html" class="text-gray-400 hover:text-white transition-colors duration-300">Услови за користење</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const shareButton = document.getElementById("share-button");
+            const shareDropdown = document.getElementById("share-dropdown");
+            shareButton.addEventListener("click", function () {
+                shareDropdown.classList.toggle("hidden");
+            });
+            document.addEventListener("click", function (event) {
+                if (
+                    !shareButton.contains(event.target) &&
+                    !shareDropdown.contains(event.target)
+                ) {
+                    shareDropdown.classList.add("hidden");
+                }
+            });
+
+            const copyLinkButton = document.getElementById("copy-link");
+            copyLinkButton.addEventListener("click", function () {
+                const currentUrl = window.location.href;
+                navigator.clipboard.writeText(currentUrl).then(function () {
+                    const originalText = copyLinkButton.innerHTML;
+                    copyLinkButton.innerHTML = `
+          <div class="w-8 h-8 flex items-center justify-center mr-2">
+          <i class="ri-check-line ri-lg text-green-500"></i>
+          </div>
+          <span>Копирано!</span>
+          `;
+                    setTimeout(function () {
+                        copyLinkButton.innerHTML = originalText;
+                    }, 2000);
+                });
+            });
+
+            const galleryImages = document.querySelectorAll(".gallery-image");
+            galleryImages.forEach((image) => {
+                image.addEventListener("click", function () {
+                    this.style.transform = "scale(1.05)";
+                    setTimeout(() => {
+                        this.style.transform = "";
+                    }, 300);
+                });
+            });
+        });
+    </script>
 </body>
 </html>

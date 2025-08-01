@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Розета Дулевска</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config = {theme: {extend: {colors: { primary: "#6366f1", secondary: "#8b5cf6" }, borderRadius: {none: "0px", sm: "4px", DEFAULT: "8px", md: "12px", lg: "16px", xl: "20px", "2xl": "24px", "3xl": "32px", full: "9999px", button: "8px",},},},};</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"/>
+    <link rel="icon" type="images/png" href="images/iconRD.png" />
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body class="bg-gray-50">
+    <header class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+      <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <a href="#home" class="text-2xl font-['Playfair_Display'] font-bold text-gray-800">Розета Дулевска</a>
+
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="#home" class="nav-link text-gray-700 hover:text-primary font-medium">Почетна</a>
+          <a href="#biography" class="nav-link text-gray-700 hover:text-primary font-medium">Биографија</a>
+          <a href="#works" class="nav-link text-gray-700 hover:text-primary font-medium">Дела</a>
+          <a href="#songs" class="nav-link text-gray-700 hover:text-primary font-medium">Песни</a>
+          <a href="#news" class="nav-link text-gray-700 hover:text-primary font-medium">Вести</a>
+          <a href="#contact" class="nav-link text-gray-700 hover:text-primary font-medium">Контакт</a>
+        </nav>
+
+        <button id="mobile-menu-button" class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700">
+          <i class="ri-menu-line ri-lg"></i>
+        </button>
+      </div>
+
+      <div id="mobile-menu" class="mobile-menu fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-50 pt-16 px-4">
+        <button id="close-menu" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center text-gray-700">
+          <i class="ri-close-line ri-lg"></i>
+        </button>
+        <div class="flex flex-col space-y-4">
+          <a href="#home" class="text-gray-700 hover:text-primary font-medium py-2 border-b border-gray-100">Почетна</a>
+          <a href="#biography" class="text-gray-700 hover:text-primary font-medium py-2 border-b border-gray-100">Биографија</a>
+          <a href="#works" class="text-gray-700 hover:text-primary font-medium py-2 border-b border-gray-100">Дела</a>
+          <a href="#songs" class="text-gray-700 hover:text-primary font-medium py-2 border-b border-gray-100">Песни</a>
+          <a href="#news" class="text-gray-700 hover:text-primary font-medium py-2 border-b border-gray-100">Вести</a>
+          <a href="#contact" class="text-gray-700 hover:text-primary font-medium py-2">Контакт</a>
+        </div>
+      </div>
+    </header>
+
+    <section id="home" class="pt-24 md:pt-0 min-h-screen flex items-center relative" style="background-image: url('images/Rozeta.png'); background-size: cover; background-position: center;">
+    <div class="absolute inset-0 bg-gradient-to-r from-gray-900/80 to-gray-900/40"></div>
+      <div class="container mx-auto px-4 py-20 relative z-10">
+        <div class="max-w-2xl">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 hero-text fade-in">
+            Розета Дулевска
+          </h1>
+          <div class="h-1 w-24 bg-primary mb-6 fade-in"></div>
+          <p class="text-xl md:text-2xl text-white mb-8 fade-in">
+            Наставник · Автор · Текстописец
+          </p>
+          <p class="text-lg text-gray-200 mb-10 fade-in">
+            „Бранувањата ќе продолжат, творењето ќе продолжи, нови ракописи се на повидок. Сè си има свое време...“
+          </p>
+          <a href="#biography" class="inline-block bg-primary hover:bg-primary/90 text-white font-medium py-3 px-8 !rounded-button transition-all duration-300 fade-in whitespace-nowrap">Дознајте повеќе</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="biography" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-3 fade-in">
+          Биографија
+        </h2>
+        <div class="section-divider mb-12 fade-in"></div>
+
+        <div class="flex flex-col md:flex-row items-center gap-12 mb-16">
+          <div class="w-full md:w-2/5 fade-in">
+            <div class="rounded-lg overflow-hidden shadow-lg">
+              <img src="images/BioImage.png" alt="Розета Дулевска" class="w-full h-auto object-cover"/>
+            </div>
+          </div>
+
+          <div class="w-full md:w-3/5 fade-in">
+            <h3 class="text-2xl font-semibold text-gray-800 mb-4">За авторката</h3>
+            <p class="text-gray-700 mb-4" style="text-align: justify; text-justify: inter-word;">
+              Авторката Розета Дулевска е дипломиран филолог при
+              Универзитетот „Св. Кирил и Методиј“ - Скопје. Таа е
+              долгогодишен наставник по македонски јазик и литература
+              во ООУ „Страшо Пинџур“ - Скопје, училиште во кое се
+              јавува како еден од уредниците на второто издание на
+              делото – Дневникот на Страшо, во 2023 година.
+            </p>
+            <p class="text-gray-700 mb-4" style="text-align: justify; text-justify: inter-word;">
+              Веќе петнаесет години е дел од организацијата на
+              Детскиот музички фестивал „Соната“ во Општина „Ѓорче
+              Петров“ како уметнички уредник и текстописец. Како
+              текстописец бележи учество и на познатиот Детски музички
+              фестивал во Македонија „Златно Славејче“ во период од десет години.
+              Неколку години нејзините текстови ја збогатуваат
+              и музичката сцена на Детскиот музички фестивал „Весело штурче“ - Штип.
+            </p>
+            <p class="text-gray-700 mb-4" style="text-align: justify; text-justify: inter-word;">
+              Се чини дека сета нејзина заложба и придонесот што го
+              прави за македонската култура се тесно поврзани со фактот
+              што таа е уметнички наследник, воедно внука на еден од
+              нашите најпознати и најплодни театарски уметници Вукан
+              Диневски, една од водечките фигури која го трасираше
+              развојот на македонскиот театар - како актер, режисер и
+              професор на Факултетот за драмски уметности.
+              Професорската професија се негува и во нејзиното потесно
+              семејство. Нејзината мајка и сестра со својата посветена
+              работа, директно ќе влијаат во изборот на оваа комплексна,
+              но сепак благородна професија.
+            </p>
+            <p class="text-gray-700 mb-4" style="text-align: justify; text-justify: inter-word;">
+              Убаво е да се споменат и нејзините учества на многу
+              литературни конкурси како ментор, постигнувајќи солидни
+              резултати, при што на Државниот натпревар по македонски
+              јазик во 2017 година се најде во групата на најуспешните
+              на Филолошкиот факултет.
+            </p>
+
+            <div class="flex flex-wrap gap-4">
+              <div class="flex items-center">
+                <div class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-3">
+                  <i class="ri-book-open-line ri-lg"></i>
+                </div>
+                <span class="text-gray-700">Автор на 2 книги</span>
+              </div>
+              <div class="flex items-center">
+                <div class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-3">
+                  <i class="ri-award-line ri-lg"></i>
+                </div>
+                <span class="text-gray-700">Наградуван наставник</span>
+              </div>
+              <div class="flex items-center">
+                <div class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-3">
+                  <i class="ri-music-line ri-lg"></i>
+                </div>
+                <span class="text-gray-700">Текстописец за музички фестивали</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="works" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-3 fade-in">
+          Дела
+        </h2>
+        <div class="section-divider mb-12 fade-in"></div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="book-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 fade-in">
+            <div class="h-80 overflow-hidden">
+              <img src="images/DnevnikCover.png" alt="Дневникот на Страшо Пинџур" class="w-full h-full object-cover object-top"/>
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-center mb-3">
+                <span class="text-sm text-gray-500">2023</span>
+                <span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">Научно - литературно дело</span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 mb-2">
+                Дневникот на Страшо Пиџнур
+              </h3>
+              <p class="text-gray-600 mb-4" style="text-align: justify; text-justify: inter-word;">
+                Дело во кое Страшо Пинџур раскажува за својата младост, семејство, љубовта и
+                идеалите слично на многу познатиот дневник на Ана Франк.
+              </p>
+              <a href="books/dnevnikBook-details.html" class="inline-flex items-center text-primary hover:text-primary/80 font-medium">
+                Прочитајте повеќе
+                <i class="ri-arrow-right-line ml-1"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="book-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 fade-in">
+            <div class="h-80 overflow-hidden">
+              <img src="images/DalgiCover.png" alt="Далги" class="w-full h-full object-cover object-top"/>
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-center mb-3">
+                <span class="text-sm text-gray-500">2025</span>
+                <span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">Поезија</span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 mb-2">
+                Далги
+              </h3>
+              <p class="text-gray-600 mb-4" style="text-align: justify; text-justify: inter-word;">
+                Поезијата во збирката „Далги“ е поезија што не е
+                наменета никому, а припаѓа секому! Стиховите во неа се
+                брануваат слично како далгите низ морето – наречен живот.
+                Црпат мотиви од животните длабочини што ни носат понекогаш
+                радост понекогаш немир.
+              </p>
+              <a href="books/dalgiBook-details.html" class="inline-flex items-center text-primary hover:text-primary/80 font-medium">
+                Прочитајте повеќе
+                <i class="ri-arrow-right-line ml-1"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="book-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 fade-in">
+            <div class="h-80 overflow-hidden">
+              <img src="images/DetskaCover.png" alt="Да ни биде животот песна" class="w-full h-full object-cover object-top"/>
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-center mb-3">
+                <span class="text-sm text-gray-500">2025</span>
+                <span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">Поезија</span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 mb-2">
+                Да ни биде животот песна
+              </h3>
+              <p class="text-gray-600 mb-4" style="text-align: justify; text-justify: inter-word;">
+                Наскоро...
+              </p>
+              <!--<a href="books/detskaPoezija-details.html" class="inline-flex items-center text-primary hover:text-primary/80 font-medium">
+                Прочитајте повеќе
+                <i class="ri-arrow-right-line ml-1"></i>
+              </a>-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="songs" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-3 fade-in">
+          Фестивалски текстови (песни)
+        </h2>
+        <div class="section-divider mb-12 fade-in"></div>
+
+        <p class="text-center text-gray-700 max-w-3xl mx-auto mb-12 fade-in">
+          Покрај пишувањето книги, имам создадено текстови за песни кои биле
+          изведени на неколку престижни музички фестивали во Македонија. Овие
+          песни ги одразуваат различните аспекти на нашата култура, традиција и
+          современ живот.
+        </p>
+
+        <div class="space-y-16">
+          <div class="fade-in">
+            <div class="flex flex-col md:flex-row gap-8 items-center">
+              <div class="w-full md:w-1/2">
+                <h3 class="text-2xl font-bold text-gray-800 mb-3">
+                  Златно Славејче
+                </h3>
+                <div class="h-1 w-16 bg-primary mb-4"></div>
+                <p class="text-gray-700 mb-4" style="text-align: justify; text-justify: inter-word;">
+                  Фестивал кој се одржува во Скопје секоја година. Моите текстови за песните се изведуваат на
+                  овој фестивал од 2013 па се до денес.
+                </p>
+                <div class="flex flex-col space-y-3 mb-6">
+                  <div class="flex items-center">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-3">
+                      <i class="ri-music-2-line"></i>
+                    </div>
+                    <span class="text-gray-700">"Мачето на баба Вера" (2013) - изведена од Марија Панчева</span>
+                  </div>
+                  <div class="flex items-center">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-3">
+                      <i class="ri-music-2-line"></i>
+                    </div>
+                    <span class="text-gray-700">"Интернет" (2014) - изведена од Андреја Басотова</span>
+                  </div>
+                  <div class="flex items-center">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-3">
+                      <i class="ri-music-2-line"></i>
+                    </div>
+                    <span class="text-gray-700">"Песна за песната" (2016) - изведена од Дора Маказлиева</span>
+                  </div>
+                  <div class="flex items-center">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-3">
+                      <i class="ri-music-2-line"></i>
+                    </div>
+                    <span class="text-gray-700">"Шарена сказна" (2017) - изведена од Тамара Божиновска</span>
+                  </div>
+                  <div class="flex items-center">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-3">
+                      <i class="ri-music-2-line"></i>
+                    </div>
+                    <span class="text-gray-700">"Книго моја" (2018) - изведена од Изабела Пренковска</span>
+                  </div>
+                  <div class="flex items-center">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-3">
+                      <i class="ri-music-2-line"></i>
+                    </div>
+                    <span class="text-gray-700">"Фудбалер" (2019) - изведена од Кристијан Ивановски</span>
+                  </div>
+                  <div class="flex items-center">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-3">
+                      <i class="ri-music-2-line"></i>
+                    </div>
+                    <span class="text-gray-700">"Зоолошка градина" (2019) - изведена од Доротеа Атанасоска</span>
+                  </div>
+                  <div class="flex items-center">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-3">
+                      <i class="ri-music-2-line"></i>
+                    </div>
+                    <span class="text-gray-700">"Детска мисла" (2021) - изведена од Сандра Несторовска</span>
+                  </div>
+                  <div class="flex items-center">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-3">
+                      <i class="ri-music-2-line"></i>
+                    </div>
+                    <span class="text-gray-700">"Есенска симфонија" (2022) - изведена од Анастасија Вангеловски</span>
+                  </div>
+                  <div class="flex items-center">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-3">
+                      <i class="ri-music-2-line"></i>
+                    </div>
+                    <span class="text-gray-700">"Бонтон" (2023) - изведена од Христина Момироска</span>
+                  </div>
+                  <div class="flex items-center">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-3">
+                      <i class="ri-music-2-line"></i>
+                    </div>
+                    <span class="text-gray-700">"Детска насмевка" (2024) - изведена од Сара Станковиќ</span>
+                  </div>
+                </div>
+                <a href="https://www.youtube.com/playlist?list=PLEATtbL0LN-tKyAZpZGzaiLmo3H0y_v31" target="_blank" class="inline-flex items-center bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 !rounded-button transition-all duration-300 whitespace-nowrap">
+                  <i class="ri-youtube-line mr-2"></i>
+                  Гледајте на YouTube
+                </a>
+              </div>
+              <div class="w-full md:w-1/2 rounded-lg overflow-hidden shadow-lg">
+                <img src="images/ZlatnoSlavejce.png" alt="Златно Славејче" class="w-full h-auto"/>
+              </div>
+            </div>
+          </div>
+
+          <div class="fade-in">
+            <div class="flex flex-col md:flex-row-reverse gap-8 items-center">
+              <div class="w-full md:w-1/2">
+                <h3 class="text-2xl font-bold text-gray-800 mb-3">Соната</h3>
+                <div class="h-1 w-16 bg-primary mb-4"></div>
+                <p class="text-gray-700 mb-4" style="text-align: justify; text-justify: inter-word;">
+                  Детскиот музички фестивал „Соната“ се одржува секоја година во Општина Ѓорче Петров, Скопје. Традиционално
+                  се одржува веќе 15 години. Основан 2009г. од Александар Китевски (наставник по музичко образование
+                  при ООУ „Страшо Пинџур“).
+                  Организатори: Александар Китевски, Розета Дулевска
+                  Текст: Розета Дулевска
+                </p>
+
+                <p class="text-gray-700 mb-4">
+                  Повеќе информации на Facebook страницата подолу:
+                </p>
+                <a href="https://www.facebook.com/edendobarvic/" target="_blank" class="inline-flex items-center bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 !rounded-button transition-all duration-300 whitespace-nowrap">
+                  Кон страница
+                </a>
+                <!--<div class="flex flex-col space-y-3 mb-6">
+                  <div class="flex items-center">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-3">
+                      <i class="ri-music-2-line"></i>
+                    </div>
+                    <span class="text-gray-700">Песна 1</span>
+                  </div>
+                  <div class="flex items-center">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-3">
+                      <i class="ri-music-2-line"></i>
+                    </div>
+                    <span class="text-gray-700">Песна 2</span>
+                  </div>
+                </div>-->
+                <!--<a href="" target="_blank" class="inline-flex items-center bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 !rounded-button transition-all duration-300 whitespace-nowrap">
+                  <i class="ri-youtube-line mr-2"></i>
+                  Гледајте на YouTube
+                </a>-->
+              </div>
+              <div class="w-full md:w-1/2 rounded-lg overflow-hidden shadow-lg">
+                <img src="images/Sonata.png" alt="Соната" class="w-full h-auto"/>
+              </div>
+            </div>
+          </div>
+
+          <div class="fade-in">
+            <div class="flex flex-col md:flex-row gap-8 items-center">
+              <div class="w-full md:w-1/2">
+                <h3 class="text-2xl font-bold text-gray-800 mb-3">
+                  Весело Штурче
+                </h3>
+                <div class="h-1 w-16 bg-primary mb-4"></div>
+                <p class="text-gray-700 mb-4" style="text-align: justify; text-justify: inter-word;">
+                  Фестивал на песни за деца кој се одржува во Штип. Долгогодишен фестивал во рамките на Макфест.
+                </p>
+                <div class="flex flex-col space-y-3 mb-6">
+                  <div class="flex items-center">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-3">
+                      <i class="ri-music-2-line"></i>
+                    </div>
+                    <span class="text-gray-700">"Бел мадам" (2022) - изведена од Матеа Шекеринова</span>
+                  </div>
+                  <div class="flex items-center">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-3">
+                      <i class="ri-music-2-line"></i>
+                    </div>
+                    <span class="text-gray-700">"Часовник" (2023) - изведена од Миа Ракиќ и Хана Костова</span>
+                  </div>
+                  <div class="flex items-center">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-3">
+                      <i class="ri-music-2-line"></i>
+                    </div>
+                    <span class="text-gray-700">"Златна рипка" (2023) - изведена од Дона Иванова</span>
+                  </div>
+                  <div class="flex items-center">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-3">
+                      <i class="ri-music-2-line"></i>
+                    </div>
+                    <span class="text-gray-700">"Дедо херој" (2024) - изведена од Тамара Самарџиска</span>
+                  </div>
+                </div>
+                <a href="https://www.youtube.com/playlist?list=PLEATtbL0LN-sVOHBlobdW9CghlnMuhUw8" target="_blank" class="inline-flex items-center bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 !rounded-button transition-all duration-300 whitespace-nowrap">
+                  <i class="ri-youtube-line mr-2"></i>
+                  Гледајте на YouTube
+                </a>
+              </div>
+              <div class="w-full md:w-1/2 rounded-lg overflow-hidden shadow-lg">
+                <img src="images/VeseloStruce.png" alt="Весело Штурче" class="w-full h-auto"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="news" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-3 fade-in">
+          Вести и настани
+        </h2>
+        <div class="section-divider mb-12 fade-in"></div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- News 1 -->
+          <div class="news-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 fade-in">
+            <div class="h-48 overflow-hidden">
+              <img src="images/detskaNews.png" alt="Да ни биде животот песна" class="w-full h-full object-cover object-top"/>
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-center mb-3">
+                <span class="text-sm text-gray-500">јули, 2025</span>
+                <span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">Најава</span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 mb-2">
+                Најава за нова детска поезија - „Да ни биде животот песна“
+              </h3>
+              <p class="text-gray-600 mb-4" style="text-align: justify; text-justify: inter-word;">
+                Наскоро нова детска збирка поезија од Розета Дулевска со наслов „Да ни биде животот песна“...
+              </p>
+              <a href="news/detskaNews-details.html" class="inline-flex items-center text-primary hover:text-primary/80 font-medium">
+                Прочитај повеќе
+                <i class="ri-arrow-right-line ml-1"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- News 2 -->
+          <div class="news-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 fade-in">
+            <div class="h-48 overflow-hidden">
+              <img src="images/dalgiLit.jpg" alt="Продажба поезија Далги" class="w-full h-full object-cover object-top"/>
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-center mb-3">
+                <span class="text-sm text-gray-500">јуни, 2025</span>
+                <span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">Известување</span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 mb-2">
+                Продажба на збирката поезија Далги
+              </h3>
+              <p class="text-gray-600 mb-4" style="text-align: justify; text-justify: inter-word;">
+                Збирката поезија „Далги“ од авторката Розета Дулевска започна со продажба во една од најпознатите книжари во Скопје.
+              </p>
+              <a href="news/sellDalgiNews-details.html" class="inline-flex items-center text-primary hover:text-primary/80 font-medium">
+                Прочитај повеќе
+                <i class="ri-arrow-right-line ml-1"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- News 3 -->
+          <div class="news-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 fade-in">
+            <div class="h-48 overflow-hidden">
+              <img src="images/DalgiNews.png" alt="Промоција поезија Далги" class="w-full h-full object-cover object-top"/>
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-center mb-3">
+                <span class="text-sm text-gray-500">15 мај, 2025</span>
+                <span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">Настан</span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 mb-2">
+                Промоција на збирка поезија Далги
+              </h3>
+              <p class="text-gray-600 mb-4" style="text-align: justify; text-justify: inter-word;">
+                Поетските бранувања низ книгата „Далги“ се оствари благодарение на моите верни читатели, кои се радуваа
+                и ме бодреа во создавањето на оваа поетска збирка или како што велат моите стихови: <br>
+                „Убаво е некогаш, некој да нé сфати,
+                да нé крене, за рака да нé фати.
+                И сé додека некој некому треба,
+                место за паника засега нема!“
+              </p>
+              <a href="news/dalgiNews-details.html" class="inline-flex items-center text-primary hover:text-primary/80 font-medium">
+                Прочитај повеќе
+                <i class="ri-arrow-right-line ml-1"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- News 4 -->
+          <div class="news-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 fade-in">
+            <div class="h-48 overflow-hidden">
+              <img src="images/KonkursNews.png" alt="Конкурс Ден победа над фашизмот" class="w-full h-full object-cover object-top"/>
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-center mb-3">
+                <span class="text-sm text-gray-500">9 мај, 2025</span>
+                <span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">Награда</span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 mb-2">
+                Прва награда за конкурс Денот на победата над фашизмот
+              </h3>
+              <p class="text-gray-600 mb-4" style="text-align: justify; text-justify: inter-word;">
+                Прво место за ученичката Симона Здравкоска од 8а одд. на конкурсот по повод Денот на победата над
+                фашизмот на градско ниво! <br>
+                Темата на која твореше: „Мојот патрон, име за љубов и почит“
+              </p>
+              <a href="news/konkursNews-details.html" class="inline-flex items-center text-primary hover:text-primary/80 font-medium">
+                Прочитај повеќе
+                <i class="ri-arrow-right-line ml-1"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- News 5 -->
+          <div class="news-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 fade-in">
+            <div class="h-48 overflow-hidden">
+              <img src="images/CitanjeNews.png" alt="Литературно читање" class="w-full h-full object-cover object-top"/>
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-center mb-3">
+                <span class="text-sm text-gray-500">5 мај, 2025</span>
+                <span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">Настан</span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 mb-2">
+                Литературно читање
+              </h3>
+              <p class="text-gray-600 mb-4" style="text-align: justify; text-justify: inter-word;">
+                Предпремиерно книгата „Далги“ и најубавото литературно читање со учениците од ООУ „Тихомир Милошевски“
+              </p>
+              <a href="news/litCitanjeNews-details.html" class="inline-flex items-center text-primary hover:text-primary/80 font-medium">
+                Прочитај повеќе
+                <i class="ri-arrow-right-line ml-1"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-3 fade-in">
+          Контакт
+        </h2>
+        <div class="section-divider mb-12 fade-in"></div>
+
+        <div class="flex flex-col lg:flex-row gap-12">
+          <div class="w-full lg:w-1/2 fade-in">
+            <h3 class="text-2xl font-semibold text-gray-800 mb-6">
+              Испратете порака
+            </h3>
+            <form id="contact-form" class="space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Име и презиме</label>
+                  <input type="text" id="name" name="name" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded focus:ring-2 focus:ring-primary/50" required/>
+                </div>
+                <div>
+                  <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Е-пошта</label>
+                  <input type="email" id="email" name="email" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded focus:ring-2 focus:ring-primary/50" required/>
+                </div>
+              </div>
+              <div>
+                <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Предмет</label>
+                <input type="text" id="subject" name="subject" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded focus:ring-2 focus:ring-primary/50" required/>
+              </div>
+              <div>
+                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Порака</label>
+                <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded focus:ring-2 focus:ring-primary/50" required></textarea>
+              </div>
+              <div>
+                <button type="submit" class="w-full bg-primary hover:bg-primary/90 text-white font-medium py-3 px-6 !rounded-button transition-all duration-300 whitespace-nowrap">
+                  Испрати порака
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <div class="w-full lg:w-1/2 fade-in">
+            <h3 class="text-2xl font-semibold text-gray-800 mb-6">
+              Контакт информации
+            </h3>
+            <div class="bg-gray-50 rounded-lg p-8 mb-8">
+              <div class="flex flex-col space-y-6">
+                <div class="flex items-start">
+                  <div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-4 mt-1">
+                    <i class="ri-mail-line ri-lg"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-lg font-medium text-gray-800 mb-1">
+                      Е-пошта
+                    </h4>
+                    <p class="text-gray-600">rdulevska@yahoo.com</p>
+                    <p class="text-gray-600">rdulevska13@gmail.com</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-4 mt-1">
+                    <i class="ri-map-pin-line ri-lg"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-lg font-medium text-gray-800 mb-1">
+                      Работно место
+                    </h4>
+                    <p class="text-gray-600">
+                      ООУ „Страшо Пинџур“ - нас. Даме Груев, о. Ѓорче Петров, Скопје
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <h3 class="text-2xl font-semibold text-gray-800 mb-6">
+              Следете ме
+            </h3>
+            <div class="flex space-x-4">
+              <a href="https://www.facebook.com/rozeta.dulevska" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full bg-gray-50 text-gray-700 hover:bg-primary hover:text-white transition-all duration-300 social-icon">
+                <i class="ri-facebook-fill ri-lg"></i>
+              </a>
+              <a href="https://www.youtube.com/@RozetaDulevska13" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full bg-gray-50 text-gray-700 hover:bg-primary hover:text-white transition-all duration-300 social-icon">
+                <i class="ri-youtube-fill ri-lg"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+          <a href="#home" class="text-2xl font-['Playfair_Display'] font-bold mb-4 md:mb-0">Розета Дулевска</a>
+
+          <div class="flex space-x-6">
+            <a href="#home" class="text-gray-300 hover:text-white transition-colors duration-300">Почетна</a>
+            <a href="#biography" class="text-gray-300 hover:text-white transition-colors duration-300">Биографија</a>
+            <a href="#works" class="text-gray-300 hover:text-white transition-colors duration-300">Дела</a>
+            <a href="#songs" class="text-gray-300 hover:text-white transition-colors duration-300">Песни</a>
+            <a href="#news" class="text-gray-300 hover:text-white transition-colors duration-300">Вести</a>
+            <a href="#contact" class="text-gray-300 hover:text-white transition-colors duration-300">Контакт</a>
+          </div>
+        </div>
+
+        <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <p class="text-gray-400 mb-4 md:mb-0">
+            &copy; 2025 Розета Дулевска. Сите права се задржани.
+          </p>
+
+          <div class="flex space-x-4">
+            <a href="terms%20&%20privacy/privacy.html" class="text-gray-400 hover:text-white transition-colors duration-300">Политика за приватност</a>
+            <a href="terms%20&%20privacy/terms.html" class="text-gray-400 hover:text-white transition-colors duration-300">Услови за користење</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+</body>
+</html>
